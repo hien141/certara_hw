@@ -1,0 +1,22 @@
+# === System & OS Artifacts ===
+.DS_Store
+Thumbs.db
+*.deb
+snap/
+
+# === Kubernetes & Local Application Runtime ===
+rest-service-k8s/app/rest-backend
+.skaffold/
+
+# === Terraform Local Workspace Cache ===
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+
+# === Local Log & Execution Outputs ===
+*.log
+plan_output
+plan_output_exercise1.txt
+plan_output_exercise2.txt

@@ -1,0 +1,17 @@
+# skaffold.yaml
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: rest-service-automation
+build:
+  local:
+    push: false
+  artifacts:
+  - image: local/rest-service
+    context: app
+    docker:
+      dockerfile: Dockerfile
+      buildArgs:
+        # Passes the host architecture binary directly into the Docker context
+        # Skaffold translates {{.IMAGE_NAME}} contexts or leaves it to native engines
+        # To bypass context limits entirely, we explicitly map the binary file copy:
